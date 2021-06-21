@@ -19,7 +19,7 @@ def main():
 
     ## Parameters of the double slit
     w = 0.6 # Width of the walls of the double slit/amplitude of the barrier in x
-    s = 0.2 # Separation between the edges of the slits/amplitude of the barrier in y
+    s = 2 # Separation between the edges of the slits/amplitude of the barrier in y
     a = 0.2 # Aperture of the slits
 
     ## Indexes that parameterize the double slit in the space of points
@@ -39,7 +39,7 @@ def main():
     # =============================================================================
 
     # Load saved data
-    loaded_mod_psis = np.loadtxt("2Slit_HW2D_mod_psis_data.txt")
+    loaded_mod_psis = np.loadtxt("PotBar2D_mod_psis_data.txt")
     
     # The loaded_mod_psis array is an auxiliary 2D array, we need to return it to its original form
     mod_psisshape2 = Ny-2
