@@ -39,7 +39,7 @@ def main():
     # =============================================================================
 
     # Load saved data
-    loaded_mod_psis = np.loadtxt("2Slit2D_mod_psis_data.txt")
+    loaded_mod_psis = np.loadtxt("2Slit_HW2D_mod_psis_data.txt")
     
     # The loaded_mod_psis array is an auxiliary 2D array, we need to return it to its original form
     mod_psisshape2 = Ny-2
