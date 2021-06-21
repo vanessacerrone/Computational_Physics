@@ -4,7 +4,6 @@ Run the [Barrier1D.py](https://github.com/vanessacerrone/Computational_Physics/b
 
 ```
 $ python3 Barrier1D.py
-
 ```
 
 The necessary data will be saved in txt files that will be loaded in the animation script. 
@@ -13,7 +12,6 @@ Run the [Animation1D.py](https://github.com/vanessacerrone/Computational_Physics
 
 ```
 $ python3 Animation1D.py
-
 ```
 
 ## Run the script to plot transmission and reflection coefficients 
@@ -21,7 +19,6 @@ Run the [TR_coefficients.py](https://github.com/vanessacerrone/Computational_Phy
 
 ```
 $ python3 TR_coefficients.py
-
 ```
 
 **_Warning_: Make sure you have defined the same parameters in the various scripts, e.g. the height and width of the barrier!**
