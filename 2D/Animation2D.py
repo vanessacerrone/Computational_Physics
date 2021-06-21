@@ -5,6 +5,7 @@ from matplotlib.patches import Rectangle
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 def main():
+
     # =============================================================================
     # Needed parameters 
     # =============================================================================
@@ -18,7 +19,7 @@ def main():
 
     ## Parameters of the double slit
     w = 0.6 # Width of the walls of the double slit/amplitude of the barrier in x
-    s = 3 # Separation between the edges of the slits/amplitude of the barrier in y
+    s = 0.2 # Separation between the edges of the slits/amplitude of the barrier in y
     a = 0.2 # Aperture of the slits
 
     ## Indexes that parameterize the double slit in the space of points
@@ -38,7 +39,7 @@ def main():
     # =============================================================================
 
     # Load saved data
-    loaded_mod_psis = np.loadtxt("PotBar2D_mod_psis_data.txt")
+    loaded_mod_psis = np.loadtxt("2Slit2D_mod_psis_data.txt")
     
     # The loaded_mod_psis array is an auxiliary 2D array, we need to return it to its original form
     mod_psisshape2 = Ny-2
@@ -56,7 +57,7 @@ def main():
     ax = fig.add_subplot(xlim=(0,L), ylim=(0,L)) # Add the subplot to the figure
     ax.set_ylabel('y[a.u]',fontsize = 16)
     ax.set_xlabel('x[a.u]',fontsize = 16)
-    img = ax.imshow(mod_psis[0], extent=[0,L,0,L], cmap=plt.get_cmap("nipy_spectral"), vmin=0, vmax=np.max(mod_psis)*0.5, zorder=1, interpolation="sinc") # Represent the modulus of the 2D wave function 
+    img = ax.imshow(mod_psis[0], extent=[0,L,0,L], cmap=plt.get_cmap("plasma"), vmin=0, vmax=np.max(mod_psis)*0.5, zorder=1, interpolation="sinc") # Represent the modulus of the 2D wave function 
     
     # Create an axes on the right side of ax. The width of cax will be 5% of ax and the padding between cax and ax will be fixed at 0.05 inch
     divider = make_axes_locatable(ax)
@@ -131,7 +132,7 @@ def main():
     
     
     anim.save('{0}_2D.mp4'.format(name), extra_args=['-vcodec', 'libx264'],dpi=150, fps=60)
-    
+
     plt.show() # Show the animation.
     
     

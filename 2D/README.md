@@ -7,7 +7,7 @@ $ python3 Barrier2D.py
 ```
 You can choose whether you want to simulate a finite potential barrier of predefined height, a single slit experiment with infinite potential barrier or a double slit experiment with either a finite or infinite potential. You will be asked to enter a number to choose the configuration: 
 
-    - if n = 0: Potential barrier 
+    - if n = 0: potential barrier 
     - if n = 1: 1 slit
     - if n = 2 : 2 slits with finite potential
     - if n = 3: 2 slits with hard walls 

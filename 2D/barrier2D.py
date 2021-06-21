@@ -43,7 +43,7 @@ def main():
 
     # Parameters of the double slit
     w = 0.6 # Width of the walls of the double slit/amplitude of the barrier in x
-    s = 3 # Separation between the edges of the slits/amplitude of the barrier in y  ( ≈ 2/3 for pot. barr., o(0.1) for slits)
+    s = 0.2 # Separation between the edges of the slits/amplitude of the barrier in y  ( ≈ 2/3 for pot. barr., o(0.1) for slits)
     a = 0.2 # Aperture of the slits
 
     ## Indexes that parameterize the double slit 
@@ -57,7 +57,7 @@ def main():
     y4 = int(1/(2*dy)*(L-s) - a/dy) # Upper edge of the upper slit
 
     # Value of the potential (if finite)
-    v0 = 2000
+    v0 = 200
     v = np.zeros((Ny,Ny), complex) 
         
     Ni = (Nx-2)*(Ny-2)  # Number of unknown factors v[i,j], i = 1,...,Nx-2, j = 1,...,Ny-2
