@@ -9,7 +9,7 @@ from scipy.sparse.linalg import spsolve
 
 # Wave function for the initial time t=0
 
-def psi0(x, y, x0, y0, sigma=0.5, kx=15*np.pi, ky = 0):
+def psi0(x, y, x0, y0, sigmax=0.5, sigmay = 0.7, kx=15*np.pi, ky = 0):
 
     '''
 
@@ -18,7 +18,7 @@ def psi0(x, y, x0, y0, sigma=0.5, kx=15*np.pi, ky = 0):
 
     '''
     
-    return np.exp(-1/2*((x-x0)**2 + (y-y0)**2)/sigma**2)*np.exp(-1j*(kx*(x-x0))+ky*(y))
+    return np.exp(-1/2*((x-x0)**2)/sigmax**2 + (y-y0)**2/sigmay**2)*np.exp(-1j*(kx*(x-x0))+ky*(y))
 
 def main():
     
