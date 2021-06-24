@@ -9,7 +9,7 @@ from scipy.sparse.linalg import spsolve
 
 # Wave function for the initial time t=0
 
-def psi0(x, y, x0, y0, sigmax=0.5, sigmay = 0.7, kx=15*np.pi, ky = 0):
+def psi0(x, y, x0, y0, sigmax=0.5, sigmay = 0.5, kx=15*np.pi, ky = 0):
 
     '''
 
@@ -56,6 +56,7 @@ def main():
     y3 = int(1/(2*dy)*(L-s))        # Lower edge of the upper slit
     y4 = int(1/(2*dy)*(L-s) - a/dy) # Upper edge of the upper slit
 
+
     # Value of the potential (if finite)
     v0 = 20000
     v = np.zeros((Ny,Ny), complex) 
@@ -75,7 +76,7 @@ def main():
 
 
     print('\nInsert 0 for potential barrier')
-    print('\nInsert 1 for single slit')
+    print('\nInsert 1 for single slit & hard wall')
     print('\nInsert 2 for double slit')
     print('\nInsert 3 for double slit & hard wall')
 
@@ -93,9 +94,6 @@ def main():
     
     elif n == 1:
         v = np.zeros((Ny,Ny), complex) 
-        #v[0:y4, x1:x2] = v0
-        #v[y3:y2,x1:x2] = 0
-        #v[y1:,  x1:x2] = v0
         name = '1Slit_HW'
 
     elif n == 2:
@@ -118,6 +116,7 @@ def main():
     # =============================================================================
 
     # Matrices for the Crank-Nicolson calculus. The problem A·x[n+1] = b = M·x[n] will be solved at each time step
+
     A = np.zeros((Ni,Ni), complex)
     M = np.zeros((Ni,Ni), complex)
 
@@ -154,7 +153,7 @@ def main():
     # Solve Schrödinger's equation
     # =============================================================================
 
-    A_s = csc_matrix(A) # Compressed Sparse Column format
+    A_s = csc_matrix(A) # Compressed Sparse Column format 
 
     # Solve the matrix system at each time step in order to obtain the wave function
 

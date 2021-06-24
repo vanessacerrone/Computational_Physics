@@ -63,6 +63,7 @@ def main():
     divider = make_axes_locatable(ax)
     cax = divider.append_axes("right", size="5%", pad=0.05)
 
+
     print('\nInsert 0 for potential barrier')
     print('\nInsert 1 for single slit')
     print('\nInsert 2 for double slit')
